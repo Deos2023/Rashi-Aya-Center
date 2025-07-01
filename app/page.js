@@ -433,7 +433,7 @@ const [formData, setFormData] = useState({
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Services</h2>
             <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
             <p className="text-gray-600 max-w-3xl mx-auto">
-              We offer a comprehensive range of care services to meet your family's needs.
+              We offer a comprehensive range of care services to meet your familys needs.
             </p>
           </motion.div>
 
