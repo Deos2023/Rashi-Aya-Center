@@ -53,18 +53,20 @@ const ImageGallery = ({ images = [] }) => {
               key={index}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="overflow-hidden rounded-lg shadow-md cursor-pointer"
+              className="overflow-hidden rounded-lg shadow-md cursor-pointer aspect-square"
               onClick={() => openImage(image, index)}
             >
-              <Image
-        src={image.src}
-        alt={image.alt || `Gallery image ${index + 1}`}
-        fill
-        className="object-cover transition duration-300 hover:opacity-90"
-        sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 20vw"
-        quality={80}
-        loading="lazy"
-      />
+              <div className="relative w-full h-full">
+                <Image
+                  src={image.src}
+                  alt={image.alt || `Gallery image ${index + 1}`}
+                  fill
+                  className="object-cover transition duration-300 hover:opacity-90"
+                  sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 20vw"
+                  quality={80}
+                  loading="lazy"
+                />
+              </div>
             </motion.div>
           ))}
         </div>
@@ -95,42 +97,42 @@ const ImageGallery = ({ images = [] }) => {
                 <FaTimes />
               </button>
 
-              <div className="relative">
-                <motion.img
+              <div className="relative aspect-video w-full">
+                <Image
                   key={currentIndex}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
                   src={selectedImage.src}
                   alt={selectedImage.alt || `Gallery image ${currentIndex + 1}`}
-                  className="w-full max-h-[80vh] object-contain"
+                  fill
+                  className="object-contain"
+                  quality={90}
+                  priority
                 />
-
-                {images.length > 1 && (
-                  <>
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        goToPrevious();
-                      }}
-                      className="absolute left-4 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition"
-                      aria-label="Previous"
-                    >
-                      <FaChevronLeft size={24} />
-                    </button>
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        goToNext();
-                      }}
-                      className="absolute right-4 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition"
-                      aria-label="Next"
-                    >
-                      <FaChevronRight size={24} />
-                    </button>
-                  </>
-                )}
               </div>
+
+              {images.length > 1 && (
+                <>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      goToPrevious();
+                    }}
+                    className="absolute left-4 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition"
+                    aria-label="Previous"
+                  >
+                    <FaChevronLeft size={24} />
+                  </button>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      goToNext();
+                    }}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition"
+                    aria-label="Next"
+                  >
+                    <FaChevronRight size={24} />
+                  </button>
+                </>
+              )}
 
               {selectedImage.caption && (
                 <div className="text-white text-center mt-4">

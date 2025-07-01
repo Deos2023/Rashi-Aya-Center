@@ -295,55 +295,60 @@ const [formData, setFormData] = useState({
 
       {/* Hero Section */}
        <section id="home" className="relative bg-blue-700 text-white py-12 md:py-20">
-      <div className="container mx-auto px-4 flex flex-col md:flex-row items-center">
-        {/* Text Content - Left Side */}
-        <motion.div 
-          initial={{ x: -50, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          className="md:w-1/2 mb-8 md:mb-0 order-2 md:order-1"
-        >
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
-            Professional Care Services in Kolkata
-          </h1>
-          <p className="text-lg sm:text-xl mb-6 sm:mb-8">
-            Compassionate nursing, nanny, and elder care services for your loved ones.
-          </p>
-          <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
-            <a 
-              href="#contact" 
-              className="bg-white text-blue-700 px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium hover:bg-gray-100 transition duration-300 flex items-center justify-center"
-            >
-              Contact Us <FaChevronRight className="ml-2" />
-            </a>
-            <a 
-              href="tel:8981918003" 
-              className="bg-transparent border-2 border-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium hover:bg-white hover:text-blue-700 transition duration-300 flex items-center justify-center"
-            >
-              <FaPhone className="mr-2" /> 8981918003
-            </a>
-          </div>
-        </motion.div>
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col lg:flex-row items-center gap-8">
+          {/* Text Content - Left Side */}
+          <motion.div 
+            initial={{ x: -50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            className="w-full lg:w-1/2 order-2 lg:order-1"
+          >
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
+              Professional Care Services in Kolkata
+            </h1>
+            <p className="text-lg sm:text-xl mb-6 sm:mb-8 max-w-lg">
+              Compassionate nursing, nanny, and elder care services for your loved ones.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <a 
+                href="#contact" 
+                className="bg-white text-blue-700 px-4 sm:px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition duration-300 flex items-center justify-center"
+              >
+                Contact Us <FaChevronRight className="ml-2" />
+              </a>
+              <a 
+                href="tel:8981918003" 
+                className="bg-transparent border-2 border-white px-4 sm:px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-blue-700 transition duration-300 flex items-center justify-center"
+              >
+                <FaPhone className="mr-2" /> 8981918003
+              </a>
+            </div>
+          </motion.div>
 
-        {/* Image - Right Side */}
-        <motion.div 
-          initial={{ x: 50, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="w-full md:w-1/2 flex justify-center mb-8 md:mb-0 order-1 md:order-2"
-        >
-          <div className="relative w-full h-64 sm:h-80 md:h-96 lg:h-[28rem] rounded-lg overflow-hidden shadow-xl">
-            <Image
-              src="/2.jpeg"
-              alt="Nurse caring for elderly"
-              fill
-              className="object-cover"
-              sizes="(max-width: 640px) 90vw, (max-width: 768px) 80vw, (max-width: 1024px) 50vw, 40vw"
-              priority
-              quality={85}
-            />
-          </div>
-        </motion.div>
+          {/* Image - Right Side */}
+          <motion.div 
+            initial={{ x: 50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="w-full lg:w-1/2 order-1 lg:order-2"
+          >
+            <div className="relative w-full h-64 sm:h-80 md:h-96 lg:h-[28rem] rounded-lg overflow-hidden shadow-xl">
+              <Image
+                src="/2.jpeg"
+                alt="Nurse caring for elderly"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw"
+                priority
+                quality={90}
+                style={{
+                  objectPosition: 'center center'
+                }}
+              />
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
 
