@@ -22,7 +22,7 @@ const galleryImages = [
   },
   {
     src: "/3.jpeg",
-    alt: "Nurse checking patient's vitals",
+    alt: "Nurse checking patients vitals",
     caption: "Medical care at home"
   },
   {
@@ -595,7 +595,7 @@ const [formData, setFormData] = useState({
                         <FaStar key={i} className="text-yellow-400" />
                       ))}
                     </div>
-                    <p className="text-gray-600 italic mb-6">"{testimonial.content}"</p>
+                    <p className="text-gray-600 italic mb-6">{testimonial.content}</p>
                     <div>
                       <p className="font-semibold text-gray-800">{testimonial.name}</p>
                       <p className="text-sm text-gray-500">{testimonial.role}</p>

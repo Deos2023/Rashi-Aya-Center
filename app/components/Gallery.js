@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaTimes, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import PropTypes from 'prop-types';
+import Image from 'next/image';
 
 const ImageGallery = ({ images = [] }) => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -55,12 +56,15 @@ const ImageGallery = ({ images = [] }) => {
               className="overflow-hidden rounded-lg shadow-md cursor-pointer"
               onClick={() => openImage(image, index)}
             >
-              <img
-                src={image.src}
-                alt={image.alt || `Gallery image ${index + 1}`}
-                className="w-full h-48 object-cover transition duration-300 hover:opacity-90"
-                loading="lazy"
-              />
+              <Image
+        src={image.src}
+        alt={image.alt || `Gallery image ${index + 1}`}
+        fill
+        className="object-cover transition duration-300 hover:opacity-90"
+        sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 20vw"
+        quality={80}
+        loading="lazy"
+      />
             </motion.div>
           ))}
         </div>
