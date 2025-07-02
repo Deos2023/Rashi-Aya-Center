@@ -900,7 +900,7 @@ const [formData, setFormData] = useState({
             </div>
           </div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; {new Date().getFullYear()} Rashi Aya Center. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Rashi Aya Center. All rights reserved. Website Develope And Maintained By Digital Exposure Online Services </p>
           </div>
         </div>
       </footer>
